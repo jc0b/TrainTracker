@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TrainTracker</string>
+    <string-array name="train_types">
+        <item>Select a type...</item>
+        <item>DDZ</item>
+        <item>DD-AR</item>
+        <item>ICE 3M</item>
+        <item>ICMm</item>
+        <item>FLIRT3</item>
+        <item>GTW</item>
+        <item>Protos</item>
+        <item>SGMm</item>
+        <item>SLT</item>
+        <item>Thalys PBKA</item>
+        <item>VIRM</item>
+        <item>VIRMm</item>
+    </string-array>
+    <string name="submit_button">Add</string>
+</resources>
