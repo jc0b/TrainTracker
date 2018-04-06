@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TrainTracker</string>
     <string-array name="train_types">
-        <item>Select a type...</item>
+        <item>Select a train type</item>
         <item>DDZ</item>
         <item>DD-AR</item>
         <item>ICE 3M</item>
@@ -16,4 +16,7 @@
         <item>VIRMm</item>
     </string-array>
     <string name="submit_button">Add</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
