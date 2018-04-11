@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TrainTracker</string>
     <string-array name="train_types">
-        <item>Select a train type</item>
+        <item>Selecteer een trein type</item>
         <item>DDZ</item>
         <item>DD-AR</item>
         <item>ICE 3M</item>
@@ -15,7 +16,7 @@
         <item>VIRM</item>
         <item>VIRMm</item>
     </string-array>
-    <string name="submit_button">Add</string>
-    <string name="unit_number_select">What unit number?</string>
-    <string name="date_journey_hint">What date were you on this train?</string>
+    <string name="submit_button">Toevoegen</string>
+    <string name="unit_number_select">Welke treinstel nummer?</string>
+    <string name="date_journey_hint">Wat was het datum van deze reis?</string>
 </resources>

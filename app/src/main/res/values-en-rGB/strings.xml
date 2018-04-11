@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrainTracker</string>
+    <string name="unit_number_select">What unit number?</string>
+    <string name="date_journey_hint">What date were you on this train?</string>
+    <string name="submit_button">Add</string>
+</resources>
