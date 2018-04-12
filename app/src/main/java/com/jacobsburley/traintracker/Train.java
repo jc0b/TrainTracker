@@ -22,10 +22,10 @@ public class Train {
                         GTW = "GTW",
                         PROTOS = "Protos",
                         PBKA = "Thalys PBKA",   //there are two types of Thalys, NS only operates one type but maybe we should include both?
-                        PBK = "Thalys PBK";
+                        PBA = "Thalys PBA";
 
     private int number;
-    private int[] invalidVIRMs =   {8609,
+    private static int[] invalidVIRMs =   {8609,
                                     8611, 8612, 8613, 8616, 8617, 8618, 8619,
                                     8620, 8622, 8623, 8625, 8626, 8627, 8629,
                                     8630, 8631, 8634,
@@ -49,9 +49,15 @@ public class Train {
                                     9511, 9513, 9515, 9517, 9519,
                                     9521, 9523, 9526, 9527, 9528, 9529,
                                     9530, 9531, 9532, 9533, 9534, 9535, 9536, 9537, 9538, 9539,
-                                    9540, 9541, 9542, 9543, 9545, 9546};
+                                    9540, 9541, 9542, 9543, 9545, 9546},
+
+    validDDARs =   {7310, 7314, 7315, 7317,
+                    7334, 7335, 7336, 7337, 7338, 7339,
+                    7342, 7343, 7344,
+                    7373, 7374, 7375, 7376, 7377};
+
     private String  type,
-            date;
+                    date;
 
     Train(int number, String date){
         this.date = date;
@@ -68,14 +74,13 @@ public class Train {
         if(number > 4000 && number <= 4250){
             //ICM
             if(number < 4011){
-                //this is a prototype ICM! not valid
                 throw new NoSuchTrainException("This is a prototype ICM!");
             }
             return ICM;
-        }else if((number > 2110 && number < 2146) || (number > 2935 && number < 2995)){
+        }else if((number >= 2111 && number <= 2145) || (number >= 2936 && number <= 2994)){
             //SGMm
             return SGMM;
-        }else if((number > 2400 && number < 2470) || (number > 2662 && number < 2600)){
+        }else if((number >= 2401 && number <= 2469) || (number > 2662 && number < 2600)){
             //SLT
             return SLT;
         }else if((number >= 8608 && number <= 8676) || (number >= 9504 && number <= 9597) || (number >= 8701 && number <= 8746) || (number >= 9401 && number < 9481)){
@@ -100,20 +105,30 @@ public class Train {
 
         }else if(true){
             //DDZ
-        }else if(true){
+        }else if(number >= 7310 && number <= 7377){
             //DD-AR
-        }else if(true){
+            if(isValidDDAR(number)){
+                return DDAR;
+            }
+            throw new NoSuchTrainException("No such DD-AR set in service");
+        }else if((number <= 406013 && number >= 406001) || (number <= 406054 && number >= 406051)){
             //ICE 3M
+            return ICE3M;
         }else if(true){
             //flirt
+            //TODO: there are a bunch of companies that run these trains so I'm not sure of the ranges
         }else if(true){
             //gtw
-        }else if(true){
+            //TODO: same with these I think
+        }else if(number <= 5035 && number >= 5031){
             //protos
-        }else if(true){
+            return PROTOS;
+        }else if((number <= 4307 && number >= 4301) || (number == 4321 || number == 4322) || (number == 4331 || number == 4332) || (number <= 4346 && number >= 4341)){
             //pbka
-        }else if(true){
+            return PBKA;
+        }else if(number <= 4540 && number >= 4532){
             //pbk
+            return PBA;
         }
         throw new NoSuchTrainException("The number listed isn't valid");
     }
@@ -126,6 +141,15 @@ public class Train {
         }
         return true;
     }
+
+    private Boolean isValidDDAR(int number){
+            for(int i = 0; i < validDDARs.length; i++){
+                if(number == validDDARs[i]){
+                    return false;
+                }
+            }
+            return true;
+        }
 
 
 }
