@@ -33,9 +33,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             - variable renaming, I'm sure that its not super consistent in both the activity_main.xml and this activity
             - break this activity down? or add a new activity for some new stuff (viewing trains etc)
             - figure out submission/storage (SQL?)
+                - https://developer.android.com/training/data-storage/files.html#java
             - learn how to use fragments, a proper datepicker would be nice
             - make sure train option data is being selected and the selection value can be passed nicely to submission method or smth
-
+            - remove type selection, but add an activity to view stored data and edit it (in case our inference is wrong)
+            - add lifecycle stuff
      */
 
 
