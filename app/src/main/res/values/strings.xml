@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TrainTracker</string>
+    <string name="app_name" translatable="false">TrainTracker</string>
     <string-array name="train_types">
         <item>Select a train type</item>
         <item>DDZ</item>

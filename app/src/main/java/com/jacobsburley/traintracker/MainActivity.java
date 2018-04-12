@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     /*
         TODO:
-            - variable renaming, I'm sure that its not super consistent in both the activity_main and this activity
+            - variable renaming, I'm sure that its not super consistent in both the activity_main.xml and this activity
             - break this activity down? or add a new activity for some new stuff (viewing trains etc)
             - figure out submission/storage (SQL?)
             - learn how to use fragments, a proper datepicker would be nice
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //TODO: if file exists, load data from file
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -52,6 +54,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         trainSelector.setAdapter(adapter);
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        //TODO: store data to file when another activity runs (we only have a single activity for now but we will need one for displaying saved data probably)
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        //TODO: load data from file when we switch back to this activity
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        //TODO: store data to file when user switches to another app
+    }
+
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        //TODO: load data from file when user switches back to this app
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
