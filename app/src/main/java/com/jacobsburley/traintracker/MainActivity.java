@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.Console;
+import java.util.ArrayList;
 
 import static java.lang.System.out;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText trainNumberField;
 
     private Spinner trainSelector;
+
+    private ArrayList<Train> trainCollection = new ArrayList<>();
 
 
     /*
@@ -98,12 +101,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void submitInformation(View view){
         trainNumber = trainNumberField.getText().toString();
+        int trainNumberInt = (int) Long.parseLong(trainNumber, 10);
         if(trainNumber.equals("")){
             Toast.makeText(this, "That's not a number!", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, trainNumber, Toast.LENGTH_SHORT).show();
             //do submission
         }
+        trainCollection.add(new Train(trainNumberInt, "12-04-2018"));
         fieldCleanup();
 
     }
