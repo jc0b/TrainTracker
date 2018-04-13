@@ -18,5 +18,7 @@
     </string-array>
     <string name="submit_button">Toevoegen</string>
     <string name="unit_number_select">Welke treinstel nummer?</string>
-    <string name="date_journey_hint">Wat was het datum van deze reis?</string>
+    <string name="date_journey_hint">Wat was de datum van deze reis?</string>
+    <string name="title_activity_collection_view">Jouw collectie</string>
+    <string name="what_is_this">Over deze app</string>
 </resources>

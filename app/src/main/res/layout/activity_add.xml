@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jacobsburley.traintracker.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,21 +20,10 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="60dp"
             android:ems="10"
             android:hint="@string/unit_number_select"
             android:inputType="number" />
-
-        <Spinner
-            android:id="@+id/train_selector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="30dp"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp" />
 
         <EditText
             android:id="@+id/ridden_date_input"
@@ -56,4 +47,19 @@
             android:onClick="submitInformation"
             android:text="@string/submit_button" />
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+
+    <include
+        layout="@layout/app_bar_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_add"
+        app:menu="@menu/activity_add_drawer" />
+
+</android.support.v4.widget.DrawerLayout>

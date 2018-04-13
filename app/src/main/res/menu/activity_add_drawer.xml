@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add"
+            android:checked="true"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/title_activity_add" />
+        <item
+            android:id="@+id/nav_collection"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="My Collection" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="@string/what_is_this" />
+    </group>
+
+    <item android:title="Feedback">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share your collection" />
+            <item
+                android:id="@+id/nav_suggestions"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Suggestions" />
+        </menu>
+    </item>
+
+</menu>

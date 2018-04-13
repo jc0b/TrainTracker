@@ -4,4 +4,6 @@
     <string name="submit_button">Add</string>
     <string name="date_journey_hint">What date were you on this train?</string>
     <string name="unit_number_select">What unit number?</string>
+    <string name="title_activity_collection_view">Your collection</string>
+    <string name="what_is_this">About this app</string>
 </resources>
